@@ -1,5 +1,3 @@
-using System;
-
 public abstract class SmartDevice
 {
     public string Name { get; set; }
@@ -14,13 +12,11 @@ public abstract class SmartDevice
     public virtual void TurnOn()
     {
         IsOn = true;
-        Console.WriteLine($"{Name} ON");
     }
 
     public virtual void TurnOff()
     {
         IsOn = false;
-        Console.WriteLine($"{Name} OFF");
     }
 
     public virtual void Toggle()
@@ -31,8 +27,8 @@ public abstract class SmartDevice
             TurnOn();
     }
 
-    public virtual void DisplayStatus()
+    public virtual string GetStatus()
     {
-        Console.WriteLine($"{Name}: {(IsOn ? "ON" : "OFF")}");
+        return IsOn ? "ON" : "OFF";
     }
 }

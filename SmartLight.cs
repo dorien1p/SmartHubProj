@@ -1,6 +1,4 @@
 public class SmartLight : SmartDevice
 {
-    public SmartLight(string name) : base(name)
-    {
-    }
+    public SmartLight(string name) : base(name) { }
 }

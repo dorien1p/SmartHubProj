@@ -1,14 +1,14 @@
 public class ToggleDeviceCommand : ICommand
 {
-    private SmartDevice device;
+    private readonly SmartDevice _device;
 
     public ToggleDeviceCommand(SmartDevice device)
     {
-        this.device = device;
+        _device = device;
     }
 
     public void Execute()
     {
-        device.Toggle();
+        _device.Toggle();
     }
 }

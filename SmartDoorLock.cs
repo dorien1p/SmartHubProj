@@ -1,5 +1,3 @@
-using System;
-
 public class SmartDoorLock : SmartDevice
 {
     public SmartDoorLock(string name) : base(name)
@@ -9,17 +7,15 @@ public class SmartDoorLock : SmartDevice
     public void Lock()
     {
         IsOn = true;
-        Console.WriteLine($"{Name} LOCKED");
     }
 
     public void Unlock()
     {
         IsOn = false;
-        Console.WriteLine($"{Name} UNLOCKED");
     }
 
-    public override void DisplayStatus()
+    public override string GetStatus()
     {
-        Console.WriteLine($"{Name}: {(IsOn ? "LOCKED" : "UNLOCKED")}");
+        return IsOn ? "LOCKED" : "UNLOCKED";
     }
 }

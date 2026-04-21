@@ -1,22 +1,25 @@
-using System;
-
 public class Thermostat : SmartDevice
 {
     public int Temperature { get; private set; }
 
-    public Thermostat(string name, int startingTemperature = 72) : base(name)
+    public Thermostat(string name, int startingTemp = 72) : base(name)
     {
-        Temperature = startingTemperature;
+        Temperature = startingTemp;
+        IsOn = true;
     }
 
-    public void SetTemperature(int newTemperature)
+    public void IncreaseTemperature()
     {
-        Temperature = newTemperature;
-        Console.WriteLine($"{Name} set to {Temperature}°F");
+        Temperature++;
     }
 
-    public override void DisplayStatus()
+    public void DecreaseTemperature()
     {
-        Console.WriteLine($"{Name}: {(IsOn ? "ON" : "OFF")} | Temperature: {Temperature}°F");
+        Temperature--;
+    }
+
+    public override string GetStatus()
+    {
+        return $"{Temperature}°F";
     }
 }

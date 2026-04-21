@@ -1,8 +1,15 @@
 using System.Collections.Generic;
 
-public class MotionSensor : ISubject
+public class MotionSensor : SmartDevice, ISubject
 {
     private List<IObserver> observers = new List<IObserver>();
+
+    public MotionSensor(string name) : base(name) { }
+
+    public void DetectMotion()
+    {
+        NotifyObservers("Motion detected!");
+    }
 
     public void RegisterObserver(IObserver observer)
     {
@@ -22,9 +29,8 @@ public class MotionSensor : ISubject
         }
     }
 
-    public void DetectMotion()
+    public override string GetStatus()
     {
-        Console.WriteLine("[SENSOR] Motion detected!");
-        NotifyObservers("Motion detected in the house!");
+        return IsOn ? "ARMED" : "IDLE";
     }
 }

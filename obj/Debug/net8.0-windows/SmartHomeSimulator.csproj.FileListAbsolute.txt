@@ -1,0 +1,15 @@
+C:\Users\theki\documents\SmartHomeSimulator\obj\Debug\net8.0-windows\SmartHomeSimulator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\theki\documents\SmartHomeSimulator\obj\Debug\net8.0-windows\SmartHomeSimulator.AssemblyInfoInputs.cache
+C:\Users\theki\documents\SmartHomeSimulator\obj\Debug\net8.0-windows\SmartHomeSimulator.AssemblyInfo.cs
+C:\Users\theki\documents\SmartHomeSimulator\obj\Debug\net8.0-windows\SmartHomeSimulator.csproj.CoreCompileInputs.cache
+C:\Users\theki\documents\SmartHomeSimulator\obj\Debug\net8.0-windows\SmartHomeSimulator.sourcelink.json
+C:\Users\theki\documents\SmartHomeSimulator\bin\Debug\net8.0-windows\SmartHomeSimulator.exe
+C:\Users\theki\documents\SmartHomeSimulator\bin\Debug\net8.0-windows\SmartHomeSimulator.deps.json
+C:\Users\theki\documents\SmartHomeSimulator\bin\Debug\net8.0-windows\SmartHomeSimulator.runtimeconfig.json
+C:\Users\theki\documents\SmartHomeSimulator\bin\Debug\net8.0-windows\SmartHomeSimulator.dll
+C:\Users\theki\documents\SmartHomeSimulator\bin\Debug\net8.0-windows\SmartHomeSimulator.pdb
+C:\Users\theki\documents\SmartHomeSimulator\obj\Debug\net8.0-windows\SmartHomeSimulator.dll
+C:\Users\theki\documents\SmartHomeSimulator\obj\Debug\net8.0-windows\refint\SmartHomeSimulator.dll
+C:\Users\theki\documents\SmartHomeSimulator\obj\Debug\net8.0-windows\SmartHomeSimulator.pdb
+C:\Users\theki\documents\SmartHomeSimulator\obj\Debug\net8.0-windows\SmartHomeSimulator.genruntimeconfig.cache
+C:\Users\theki\documents\SmartHomeSimulator\obj\Debug\net8.0-windows\ref\SmartHomeSimulator.dll
