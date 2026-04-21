@@ -12,3 +12,4 @@ C:\Users\theki\documents\SmartHomeSimulator\obj\Debug\net10.0\refint\SmartHomeSi
 C:\Users\theki\documents\SmartHomeSimulator\obj\Debug\net10.0\SmartHomeSimulator.pdb
 C:\Users\theki\documents\SmartHomeSimulator\obj\Debug\net10.0\SmartHomeSimulator.genruntimeconfig.cache
 C:\Users\theki\documents\SmartHomeSimulator\obj\Debug\net10.0\ref\SmartHomeSimulator.dll
+C:\Users\theki\Documents\SmartHomeSimulator\obj\Debug\net10.0\SmartHomeSimulator.sourcelink.json

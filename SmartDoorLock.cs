@@ -2,17 +2,24 @@ using System;
 
 public class SmartDoorLock : SmartDevice
 {
-    public SmartDoorLock(string name) : base(name) { }
-
-    public void LockDoor()
+    public SmartDoorLock(string name) : base(name)
     {
-        Status = true;
-        Console.WriteLine(Name + " LOCKED");
     }
 
-    public void UnlockDoor()
+    public void Lock()
     {
-        Status = false;
-        Console.WriteLine(Name + " UNLOCKED");
+        IsOn = true;
+        Console.WriteLine($"{Name} LOCKED");
+    }
+
+    public void Unlock()
+    {
+        IsOn = false;
+        Console.WriteLine($"{Name} UNLOCKED");
+    }
+
+    public override void DisplayStatus()
+    {
+        Console.WriteLine($"{Name}: {(IsOn ? "LOCKED" : "UNLOCKED")}");
     }
 }

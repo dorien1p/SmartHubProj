@@ -1,52 +1,97 @@
 ﻿using System;
-using System.Threading;
+using System.Collections.Generic;
 
 class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        SmartLight light = new SmartLight("Living Room Light");
-        SmartDoorLock door = new SmartDoorLock("Front Door");
-        Thermostat thermostat = new Thermostat("Main Thermostat", 70);
+        SmartLight livingRoomLight = new SmartLight("Living Room Light");
+        SmartLight kitchenLight = new SmartLight("Kitchen Light");
+        Thermostat thermostat = new Thermostat("Main Thermostat");
+        SmartDoorLock frontDoor = new SmartDoorLock("Front Door Lock");
 
-        ICommand lightOn = new TurnOnLightCommand(light);
-        ICommand lockDoor = new LockDoorCommand(door);
-        ICommand setTemp = new SetTemperatureCommand(thermostat, 72);
+        MotionSensor motionSensor = new MotionSensor();
+        HomeownerApp homeowner = new HomeownerApp();
+        motionSensor.RegisterObserver(homeowner);
 
-        MotionSensor sensor = new MotionSensor();
-        HomeownerApp app = new HomeownerApp();
-        EventLogger logger = new EventLogger();
-
-        sensor.Attach(app);
-        sensor.Attach(logger);
-        thermostat.Attach(app);
-        thermostat.Attach(logger);
-
-        lightOn.Execute();
-        lockDoor.Execute();
-        setTemp.Execute();
-
-        sensor.MotionDetected += message =>
+        List<SmartDevice> devices = new List<SmartDevice>
         {
-            Console.WriteLine("[EVENT] " + message);
+            livingRoomLight,
+            kitchenLight,
+            thermostat,
+            frontDoor
         };
 
-        Thread sensorThread = new Thread(() =>
+        bool running = true;
+
+        while (running)
         {
-            for (int i = 0; i < 3; i++)
+            Console.WriteLine("\n===== SMART HOME SIMULATOR =====");
+            Console.WriteLine("1. Toggle Living Room Light");
+            Console.WriteLine("2. Toggle Kitchen Light");
+            Console.WriteLine("3. Set Thermostat Temperature");
+            Console.WriteLine("4. Lock Front Door");
+            Console.WriteLine("5. Unlock Front Door");
+            Console.WriteLine("6. Show Device Status");
+            Console.WriteLine("7. Trigger Motion Sensor");
+            Console.WriteLine("8. Exit");
+            Console.Write("Choose an option: ");
+
+            string? choice = Console.ReadLine();
+
+            switch (choice)
             {
-                Thread.Sleep(2000);
-                sensor.DetectMotion();
+                case "1":
+                    new ToggleDeviceCommand(livingRoomLight).Execute();
+                    break;
+
+                case "2":
+                    new ToggleDeviceCommand(kitchenLight).Execute();
+                    break;
+
+                case "3":
+                    Console.Write("Enter new temperature: ");
+                    string? tempInput = Console.ReadLine();
+
+                    if (int.TryParse(tempInput, out int temp))
+                    {
+                        new SetTemperatureCommand(thermostat, temp).Execute();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid temperature.");
+                    }
+                    break;
+
+                case "4":
+                    new LockDoorCommand(frontDoor).Execute();
+                    break;
+
+                case "5":
+                    frontDoor.Unlock();
+                    break;
+
+                case "6":
+                    Console.WriteLine("\n--- DEVICE STATUS ---");
+                    foreach (var device in devices)
+                    {
+                        device.DisplayStatus();
+                    }
+                    break;
+
+                case "7":
+                    motionSensor.DetectMotion();
+                    break;
+
+                case "8":
+                    running = false;
+                    Console.WriteLine("Exiting Smart Home Simulator...");
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid option. Try again.");
+                    break;
             }
-        });
-
-        sensorThread.Start();
-        sensorThread.Join();
-
-        Console.WriteLine();
-        Console.WriteLine("Final Device Status:");
-        Console.WriteLine($"Light: {(light.Status ? "ON" : "OFF")}");
-        Console.WriteLine($"Door: {(door.Status ? "LOCKED" : "UNLOCKED")}");
-        Console.WriteLine($"Thermostat: {thermostat.Temperature}°F");
+        }
     }
 }

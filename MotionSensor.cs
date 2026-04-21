@@ -1,29 +1,30 @@
-using System;
 using System.Collections.Generic;
 
 public class MotionSensor : ISubject
 {
     private List<IObserver> observers = new List<IObserver>();
 
-    public event Action<string> MotionDetected;
-
-    public void Attach(IObserver observer)
+    public void RegisterObserver(IObserver observer)
     {
         observers.Add(observer);
     }
 
-    public void Notify(string message)
+    public void RemoveObserver(IObserver observer)
     {
-        foreach (var o in observers)
+        observers.Remove(observer);
+    }
+
+    public void NotifyObservers(string message)
+    {
+        foreach (var observer in observers)
         {
-            o.Update(message);
+            observer.Update(message);
         }
     }
 
     public void DetectMotion()
     {
-        string message = "Motion detected!";
-        Notify(message);
-        MotionDetected?.Invoke(message);
+        Console.WriteLine("[SENSOR] Motion detected!");
+        NotifyObservers("Motion detected in the house!");
     }
 }

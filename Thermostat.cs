@@ -1,32 +1,22 @@
-using System.Collections.Generic;
 using System;
 
-public class Thermostat : SmartDevice, ISubject
+public class Thermostat : SmartDevice
 {
-    private List<IObserver> observers = new List<IObserver>();
-    public int Temperature { get; set; }
+    public int Temperature { get; private set; }
 
-    public Thermostat(string name, int temperature) : base(name)
+    public Thermostat(string name, int startingTemperature = 72) : base(name)
     {
-        Temperature = temperature;
+        Temperature = startingTemperature;
     }
 
-    public void SetTemperature(int temp)
+    public void SetTemperature(int newTemperature)
     {
-        Temperature = temp;
-        Notify(Name + " temperature set to " + Temperature + "°F");
+        Temperature = newTemperature;
+        Console.WriteLine($"{Name} set to {Temperature}°F");
     }
 
-    public void Attach(IObserver observer)
+    public override void DisplayStatus()
     {
-        observers.Add(observer);
-    }
-
-    public void Notify(string message)
-    {
-        foreach (var o in observers)
-        {
-            o.Update(message);
-        }
+        Console.WriteLine($"{Name}: {(IsOn ? "ON" : "OFF")} | Temperature: {Temperature}°F");
     }
 }

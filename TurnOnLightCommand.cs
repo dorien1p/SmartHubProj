@@ -1,5 +1,3 @@
-using System;
-
 public class TurnOnLightCommand : ICommand
 {
     private SmartLight light;

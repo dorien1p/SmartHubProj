@@ -1,14 +1,14 @@
 public class LockDoorCommand : ICommand
 {
-    private SmartDoorLock door;
+    private SmartDoorLock doorLock;
 
-    public LockDoorCommand(SmartDoorLock door)
+    public LockDoorCommand(SmartDoorLock doorLock)
     {
-        this.door = door;
+        this.doorLock = doorLock;
     }
 
     public void Execute()
     {
-        door.LockDoor();
+        doorLock.Lock();
     }
 }

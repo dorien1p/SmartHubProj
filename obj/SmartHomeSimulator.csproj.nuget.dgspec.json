@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\theki\\documents\\SmartHomeSimulator\\SmartHomeSimulator.csproj": {}
+    "C:\\Users\\theki\\Documents\\SmartHomeSimulator\\SmartHomeSimulator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\theki\\documents\\SmartHomeSimulator\\SmartHomeSimulator.csproj": {
+    "C:\\Users\\theki\\Documents\\SmartHomeSimulator\\SmartHomeSimulator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\theki\\documents\\SmartHomeSimulator\\SmartHomeSimulator.csproj",
+        "projectUniqueName": "C:\\Users\\theki\\Documents\\SmartHomeSimulator\\SmartHomeSimulator.csproj",
         "projectName": "SmartHomeSimulator",
-        "projectPath": "C:\\Users\\theki\\documents\\SmartHomeSimulator\\SmartHomeSimulator.csproj",
+        "projectPath": "C:\\Users\\theki\\Documents\\SmartHomeSimulator\\SmartHomeSimulator.csproj",
         "packagesPath": "C:\\Users\\theki\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\theki\\documents\\SmartHomeSimulator\\obj\\",
+        "outputPath": "C:\\Users\\theki\\Documents\\SmartHomeSimulator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\theki\\AppData\\Roaming\\NuGet\\NuGet.Config"
