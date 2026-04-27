@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Team SmartHub - Parent Control Panel</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <h1>SmartHub Remote Control</h1>
+    <p class="sub">Parent monitoring and device control panel.</p>
+
+    <section class="card">
+      <h2>Sound</h2>
+      <button id="enableSoundBtn" onclick="enableSound()">Enable Sound</button>
+      <audio id="alarmSound" src="alarm2.m4a" preload="auto"></audio>
+      <p class="hint">Click Enable Sound once before testing alarm alerts.</p>
+    </section>
+
+    <section class="card">
+      <h2>Live Alert</h2>
+      <div id="liveAlert" class="live-alert safe">System normal</div>
+    </section>
+
+    <section class="card">
+      <h2>Resident Position</h2>
+      <div id="residentPosition"></div>
+    </section>
+
+    <section class="card">
+      <h2>Lights</h2>
+      <div id="lights" class="list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Doors</h2>
+      <div id="doors" class="list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Fans</h2>
+      <div id="fans" class="list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Alarms</h2>
+      <div id="alarms" class="list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Blinds</h2>
+      <div id="blinds" class="list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Thermostat</h2>
+      <div id="thermostat"></div>
+      <div class="row">
+        <button onclick="thermoUp()">Temp +</button>
+        <button onclick="thermoDown()">Temp -</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Undo / Redo</h2>
+      <div class="row">
+        <button onclick="undo()">Undo</button>
+        <button onclick="redo()">Redo</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Security</h2>
+      <div id="security" class="list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Alerts</h2>
+      <div id="alerts" class="list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Design Patterns Used</h2>
+      <div class="list">
+        <div class="item"><div>Observer Pattern</div><div>Security devices notify observers</div></div>
+        <div class="item"><div>Command Pattern</div><div>Device actions use command objects</div></div>
+        <div class="item"><div>Undo / Redo</div><div>Command history supports undo and redo</div></div>
+        <div class="item"><div>Abstract Class</div><div>SmartDevice base class</div></div>
+        <div class="item"><div>Events</div><div>TriggeredChanged and LogEmitted</div></div>
+        <div class="item"><div>Multithreading</div><div>Background monitoring task</div></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

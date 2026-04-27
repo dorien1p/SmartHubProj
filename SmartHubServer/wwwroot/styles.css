@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #121216;
+  color: #f1f1f1;
+}
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+h1 {
+  margin-bottom: 6px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.sub {
+  color: #b7bfd3;
+  margin-top: 0;
+}
+
+.hint {
+  color: #b7bfd3;
+  font-size: 14px;
+}
+
+.card {
+  background: #1e2026;
+  border: 1px solid #3b4254;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2a2d35;
+  border-radius: 8px;
+  padding: 10px 12px;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button {
+  background: #4e7cff;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  min-width: 96px;
+}
+
+button:hover {
+  background: #3c67df;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.on {
+  background: #8b6f00;
+}
+
+.off {
+  background: #555;
+}
+
+.locked {
+  background: #8b1d1d;
+}
+
+.unlocked {
+  background: #0b6ea8;
+}
+
+.triggered {
+  background: #9b1c1c;
+}
+
+.monitoring {
+  background: #236f3b;
+}
+
+.active {
+  background: #8b1d1d;
+}
+
+.inactive {
+  background: #555;
+}
+
+.open {
+  background: #0b6ea8;
+}
+
+.closed {
+  background: #555;
+}
+
+.live-alert {
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+
+.safe {
+  background: #1f5f37;
+  color: white;
+}
+
+.danger {
+  background: #8b1d1d;
+  color: white;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    filter: brightness(1);
+  }
+
+  to {
+    filter: brightness(1.35);
+  }
+}
+
+@media (max-width: 700px) {
+  .item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
