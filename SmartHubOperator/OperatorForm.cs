@@ -15,7 +15,9 @@ public class OperatorForm : Form
     private readonly HashSet<Keys> keys = new();
     private readonly HttpClient http = new();
     private StateDto? state;
-
+////////////////////////////////////////////////////////////////////////////////////////////
+/// Change IP address below
+////////////////////////////////////////////////////////////////////////////////////////////
     private readonly string baseUrl = "http://192.168.4.26:5000";
     private const string operatorKey = "TEAMSMARTHUB";
     private readonly Rectangle floorPlanBounds;

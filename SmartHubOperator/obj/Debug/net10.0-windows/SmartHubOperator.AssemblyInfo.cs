@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartHubOperator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fdff02717a874dc69278487c39f1cacf00f29e8")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartHubOperator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartHubOperator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
